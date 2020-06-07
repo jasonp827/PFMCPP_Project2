@@ -4,24 +4,27 @@
 template<typename ...T>
 void ignoreUnused(T&&...) { }
 
-
 /*
 Project 2 - Part 1 / 1
 video: Chapter 2 - Part 3
  Declarations Tasks
+
  Create a branch named Part1
+
  Purpose:  This project will teach you how to declare variables and free functions.  
  This will be the first project where the code you write will be compiled and you will be responsible for making sure it compiles before submitting it for review.
  
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
+
  int
  char
  bool
  float
  double
  void
+
  
  
  
@@ -56,6 +59,7 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+
     int score = 125;
     int age = 24;
     int fingers = 10;
@@ -88,6 +92,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
     ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
     return {}; //if your function returns something other than void, add 'return {};' at the end of it.
 } 
+
 /*
  1)
  */
@@ -168,12 +173,15 @@ double discreteFourierTransform(int sampleRate, double angularFrequency, double 
 }
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
+
  Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
  
  If you didn't already: 
     Make a pull request after you make your first commit
     pin the pull request link and this repl.it link to our DM thread in a single message.
+
  send me a DM to review your pull request when the project is ready for review.
+
  Wait for my code review.
  */
 
@@ -183,6 +191,7 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+
     auto wakeStatus = wakeUp (11);
     //2)
     auto jacksJumped = jumpingJacks(true, false);
@@ -205,6 +214,7 @@ int main()
 
     
     ignoreUnused(carRented, wakeStatus, jacksJumped, delaySync, diceSide, newCard, pluginOn, timeToMaster, spectrum);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
