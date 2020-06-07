@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 template<typename ...T>
 void ignoreUnused(T&&...) { }
 
@@ -16,12 +17,14 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
+
+ int
+ char
+ bool
+ float
+ double
+ void
+
  
  
  
@@ -56,10 +59,29 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+
+    int score = 125;
+    int age = 24;
+    int fingers = 10;
+
+    char skateShoeRental = 'M';
+    char firstNameFirstLetter = 'J';
+    char lastNameLastLetter = 'P';
+ 
+    bool earthIsRound = true;
+    bool iLoveCuredMeats = true;
+    bool iDontExist = false;
+
+    float change = 5.43f;
+    float interestRate = 3.243f;
+    float mixLevel = 0.24f;
+
+    double pi = 3.141592653589793;
+    double e = 2.718281828459045;
+    double squareRootOfTwo = 1.41421356237;
+
     
-    
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, score, age, fingers, skateShoeRental, firstNameFirstLetter, lastNameLastLetter, earthIsRound, iLoveCuredMeats, iDontExist, change, interestRate, mixLevel, pi, e, squareRootOfTwo); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -74,43 +96,81 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+bool wakeUp (int hourOfDay, bool stayedUp = true)
+{
+    ignoreUnused(hourOfDay, stayedUp);
+    return {};
+}
 /*
  2)
  */
-
+int jumpingJacks(bool energetic, bool hasWater, float fitnessLevel = 9001.2f)
+{
+    ignoreUnused(energetic, hasWater, fitnessLevel);
+    return {};
+}
 /*
  3)
  */
-
+float calculateDelaySync(float bpm, float divideMultiply = 1.125f)
+{
+    ignoreUnused(bpm, divideMultiply);
+    return {};
+}
 /*
  4)
  */
-
+void setParameter(float currentPosition, float amountDifference = 0.34f)
+{
+    ignoreUnused(currentPosition, amountDifference);
+}
 /*
  5)
  */
-
+int rollDice(float force, float torque, float impactAngle)
+{
+    ignoreUnused(force, torque, impactAngle);
+    return {};
+}
 /*
  6)
  */
-
+char getCard(int deckShuffleArrangement, int cardsDrawn = 23)
+{
+    ignoreUnused(deckShuffleArrangement, cardsDrawn);
+    return {};
+}
 /*
  7)
  */
-
+bool pluginOnOff(bool midiGate)
+{
+    ignoreUnused(midiGate);
+    return {};
+}
 /*
  8)
  */
-
+bool soundsGreat(bool isThereEnoughBass)
+{
+    ignoreUnused(isThereEnoughBass);
+    return {};
+}
 /*
  9)
  */
-
+void pluginOnline()
+{
+    ignoreUnused();
+}
 /*
  10)
  */
-
+double discreteFourierTransform(int sampleRate, double angularFrequency, double signal)
+{
+    ignoreUnused(sampleRate, angularFrequency, signal);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,27 +191,31 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+
+    auto wakeStatus = wakeUp (11);
     //2)
-    
+    auto jacksJumped = jumpingJacks(true, false);
     //3)
-    
+    auto delaySync = calculateDelaySync(140.f, 1.5f);
     //4)
-    
+    setParameter(12.5f, 0.12f);
     //5)
-    
+    auto diceSide = rollDice(1.34f, 24.532f, 32.1234f);
     //6)
-    
+    auto newCard = getCard(1329534, 12);
     //7)
-    
+    auto pluginOn = pluginOnOff(true);
     //8)
-    
+    auto timeToMaster = soundsGreat(true);
     //9)
-    
+    pluginOnline();
     //10)
+    auto spectrum = discreteFourierTransform(48000, 289.439, 875.575);
+
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, wakeStatus, jacksJumped, delaySync, diceSide, newCard, pluginOn, timeToMaster, spectrum);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
+
